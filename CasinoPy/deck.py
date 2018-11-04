@@ -29,9 +29,14 @@ class Deck():
     def printDeck(self):
         for x in self.remaining:
             print(x.printCard())
-
+#Description : discard all cards in deck
+#Params : None
+#Returns : None 
+    def emptyDeck(self):
+        self.remaining = []
 #Description : Loading deck from serialization file 
-#Input : serializedDeck -> list of cards read from serialization file
+#parmas : serializedDeck -> list of cards read from serialization file
+#returns : none 
     def loadDeck(self, serializedDeck):
         for card in serializedDeck:
-            self.remaining.append(card)
+            self.remaining.append(Card(card[0],card[1]))
